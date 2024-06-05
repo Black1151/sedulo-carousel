@@ -1,6 +1,6 @@
 ## Welcome to my beautful carousel!
 
-The carousel is implermented using atomic design priciples as requested so the carousel molecule can actually be use without its parent which handles the changing background if needs be. Code is modular and clean adhering to best practices and DRY principles. Whole thing is completely bespoke and written using Chakra ui components and animation techniques.
+The carousel is implemented using atomic design priciples as requested, so the carousel molecule can actually be used without its parent which handles the changing background if needs be. Code is modular and clean, adhering to best practices and DRY principles. Whole thing is completely bespoke and written using Chakra UI components and animation techniques.
 
 I hope you guys have as much fun messing with it as I had making it!
 

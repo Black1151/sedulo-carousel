@@ -34,16 +34,20 @@ const Carousel: React.FC<CarouselProps> = ({
         >
           {carouselItems.map((item, index) => {
             let opacity = 1
+            let pointerEvents: "auto" | "none" = "auto"
             const distance = Math.abs(currentIndex - index)
 
             if (distance === 1) {
               opacity = 0.8
+              pointerEvents = "auto"
             } else if (distance > 1) {
               opacity = 0
+              pointerEvents = "none"
             }
 
             if (currentIndex === 0 && index === 2) {
               opacity = 0.8
+              pointerEvents = "auto"
             }
 
             return (
@@ -52,10 +56,11 @@ const Carousel: React.FC<CarouselProps> = ({
                 onClick={() =>
                   currentIndex === index ? "" : updateIndex(index)
                 }
-                transition="opacity 0.5s ease-in-out"
+                transition="opacity 0.5s ease-in-out, pointer-events 0.5s ease-in-out"
                 width={`${100 / carouselItems.length}%`}
                 opacity={opacity}
-                cursor="pointer"
+                cursor={distance <= 1 ? "pointer" : "default"}
+                pointerEvents={pointerEvents}
               >
                 <CarouselItem {...item} isSelected={index === currentIndex} />
               </Box>

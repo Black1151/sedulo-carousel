@@ -49,7 +49,9 @@ const Carousel: React.FC<CarouselProps> = ({
             return (
               <Box
                 key={index}
-                onClick={() => updateIndex(index)}
+                onClick={() =>
+                  currentIndex === index ? "" : updateIndex(index)
+                }
                 transition="opacity 0.5s ease-in-out"
                 width={`${100 / carouselItems.length}%`}
                 opacity={opacity}
